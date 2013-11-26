@@ -20,10 +20,10 @@ while [ 1 ]; do
         do
             wget -r -q $IMAGE
         done
-        PAGEURL=`echo $PAGE | sed 's_\(http://www.reddit.com/r/corgi/?count=[a-zA-Z0-9&;=_]*\)_\n\1\n_g' | egrep '^http'`
+        PAGEURL=`echo $PAGE | sed 's_\(http://www.reddit.com/r/[a-zA-Z0-9]*/?count=[a-zA-Z0-9&;=_]*\)_\n\1\n_g' | egrep '^http'`
         if ! curl --output /dev/null --silent --head --fail "$PAGEURL";
         then
-            PAGEURLS=`echo $PAGE | sed 's_\(http://www.reddit.com/r/corgi/?amp[a-zA-Z0-9&;=_]*\)_\n\1\n_g' | egrep '^http'`
+            PAGEURLS=`echo $PAGE | sed 's_\(http://www.reddit.com/r/[a-zA-Z0-9]*/?amp[a-zA-Z0-9&;=_]*\)_\n\1\n_g' | egrep '^http'`
             PAGEURL=`echo "hi $PAGEURLS" | grep -v hi`
         fi
         let PAGECOUNT=PAGECOUNT+1
