@@ -1,7 +1,8 @@
 #!/bin/bash
-SUBREDDIT="http://www.reddit.com/r/corgi"
-NUMPAGES=5
-REFRESHRATE=300
+SUBREDDIT="http://www.reddit.com/r/$1"
+NUMPAGES=$2
+REFRESHRATE=$3
+OVER18=true
 
 while [ 1 ]; do
     PAGEURL=$SUBREDDIT

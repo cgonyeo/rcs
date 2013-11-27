@@ -1,6 +1,8 @@
 rcs
 ===
 
+Usage: ./redditstream.sh {subreddit} {number of pages} {time between updates}
+
 The Reddit Content Stream. Watches a given subreddit for imgur links and 
 downloads all it sees.
 
